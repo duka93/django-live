@@ -1,0 +1,540 @@
+html{
+    font-family: "Life savers";
+    scroll-behavior: smooth;
+   
+   }
+   
+   p{
+       font-size: 20px;
+   }
+   
+   *{
+       box-sizing: border-box;
+       padding: 0;
+       margin: 0;
+   }
+   
+   /*Header sekcija*/
+   
+   .navbar{
+       display: flex;
+       color: white;
+       font-weight: bold;
+       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+       font-size: 17px;
+       background-color: white;
+       width: 100%;
+       position: fixed;
+       z-index:1;
+       padding: 5px;
+   }
+   
+   .vrh{
+       border-style:solid;
+       border-radius: 10px;
+       margin-left: 10px;
+       background-color: rgb(30, 152, 196);
+       margin-right: auto;
+       padding: 10px;
+    
+   }
+   
+   #elementi-liste-horizontalno{
+       display:flex;
+   
+   }
+   
+   
+   .navbar li{
+       margin-right: 5px; 
+       padding: 10px;
+   
+       /*ovako dobijamo razmak izmedju elemenata liste*/
+   }
+   
+   .decor{
+       background: #77C3EC;
+       border-style:solid; 
+       border-radius: 10px;
+   }
+   
+   .navbar a{
+       color: white;
+   }
+   .navbar a,a:visited{
+       text-decoration: none;
+   }
+   
+   
+   /*Koncept sekcija*/
+   
+   .uvod{
+       padding-top: 100px;
+       padding-bottom: 900px;
+       background-image: url('../images/dijeta-je-meta-1.png');
+       background-size: cover;
+       position: relative;
+       text-align: center;
+   }
+   
+   
+   .koncept{
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%, -50%);
+       background-color: rgba(255, 247, 247, 0.75);
+       width: 40%;
+       padding: 10px;
+       border-radius: 20px;
+   }
+   
+   .koncept h1,p,h2{
+       opacity: 1.0 !important;
+       font-weight: bold;
+   }
+   
+   
+   /*Zablude sekcijaa*/
+   
+   #zablude{
+       margin-bottom: 40px;
+       font-weight: bold;
+   }
+   .slike-za-fleks{
+       display:flex;
+       justify-content: center;
+       flex-wrap: wrap;
+       margin: auto;
+   }
+   
+   .block{
+       margin: 25px 37px;
+       padding-bottom: 20px;
+       color: white;
+       text-align: center;
+       border-radius: 20px;
+       font-size: 15.5px;
+   }
+   .block figcaption{
+       margin-top: 10px;
+       text-align: center;
+   }
+   .block img{
+       width: 500px;
+       height: 400px;
+       border-top-left-radius: 20px;
+       border-top-right-radius: 20px;
+   }
+   
+   #zablude-h1{
+       text-align: center;
+       padding: 30px;
+       font-style: italic;
+       background: linear-gradient(#77C3EC, #89CFF0, #9DD9F3, #B8E2F2);
+       color: #B8E2F2;
+   }
+   
+   /*Tablica kalorija*/
+   
+   
+   #tablica-kalorija{
+       margin-right: 25px;
+       padding-bottom: 65px;
+       margin-left: 25px;
+       display: flex;
+       padding-top: 65px;
+   }
+   
+   #tablica-kalorija h1{
+       margin-bottom: 25px;
+   }
+   
+   .text-segment ul{
+       font-size: 20px;
+       margin: 25px 25px;
+   }
+   
+   
+   .text-segment h2{
+      opacity: 60%;
+      background: linear-gradient(#77C3EC, #89CFF0, #9DD9F3, #B8E2F2);
+      padding-top: 10px;
+      padding-left: 7px;
+      height: 50px;
+      color: white;
+   }
+   
+   .text-segment a{
+       text-decoration: none;
+   }
+   
+   #italic{
+       font-style: italic;
+   }
+   
+   .reference img{
+       width: 150px;
+       height: 150px;
+   }
+   
+   .ref-jedan{
+       display: flex;
+       margin-top: 20px;
+       margin-left: 25px;
+       border-style: solid;
+       border-top: none;
+       border-left: none;
+       border-right: none;
+       border-color: rgb(198, 237, 237);
+   }
+   
+   .text-ref{
+       font-size: 20px;
+       margin-left: 25px;
+   }
+   
+   .text-ref p{
+       margin-top: 25px;
+       margin-bottom: 25px;
+   }
+   
+   .link-ref{
+       color: rgb(89, 195, 231);
+       font-weight: bold;
+   }
+   
+   .link-ref :hover{
+       text-decoration: underline;
+   }
+   
+   #tablica-kalorija a :hover{
+       text-decoration: underline;
+   }
+   
+   .image-segment img{
+       width: 73%;
+   }
+   
+   /*Footer*/
+   
+   
+   footer{
+       margin-top: 50px;
+       background: linear-gradient(#77C3EC, #89CFF0, #9DD9F3, #B8E2F2);
+       height: 180px;
+       border-style: solid;
+       border-bottom: none;
+       border-left: none;
+       border-right: none;
+       border-color: rgb(228, 232, 232);
+       color: white;
+   }
+   
+   .footer-segment{
+       padding-top: 80px;
+       margin-left: 25px;
+       display: flex;
+   }
+   
+   #marg{
+       margin-right: auto;
+   }
+   
+   .right ul{
+       display: flex;
+       font-size: 20px;
+       list-style: none;
+   }
+   
+   .right li{
+       padding-right: 20px;
+   
+   }
+   
+   footer a,a:visited{
+       text-decoration: none;
+   }
+   
+   footer a{
+       color: white;
+       border-radius: 50%;
+       padding:9px;
+       border-style: solid;
+   }
+   
+   #fb :hover{
+       background-color: rgb(66 103 178);
+       color: white;
+       transition-duration: 0.5s;
+   }
+
+   #ig :hover{
+    transition-duration: 0.5s;
+    background: #f09433; 
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+    color: white;
+    }
+
+    #mail :hover{
+        background-color: gray;
+        color: white;
+        transition-duration: 0.5s;
+    }
+
+   
+   
+   footer li{
+       font-size: 20px;
+       font-weight: bold;
+   }
+   
+   
+   
+   /*Blog*/
+   
+   #blog-background{
+       background-color: rgb(242, 239, 234);
+   }
+   
+   
+   .blog{
+       display: block;
+       margin-left: 150px;
+       margin-bottom: 50px;
+       margin-right: 150px;
+       background-color: rgb(254, 254, 254);
+       border-style: solid;
+       border-radius: 20px;
+       border-color: antiquewhite;
+       padding: 10px;
+   
+   }
+   
+   .content{
+       display: inline-flex;
+   }
+   
+   #padding-only{
+       padding-top: 150px;
+   }
+   
+   .blog h2{
+       background-color: rgb(67, 188, 218);
+       padding: 10px;
+       border-radius: 10px;
+       margin-bottom: 10px;
+       font-size: 35px;
+       font-family: 'Times New Roman', Times, serif;
+   }
+   
+   .blog img{
+       border-radius: 7px;
+       width: 180px;
+       height: 180px;
+       margin-right: 10px;
+   }
+   
+   .content p{
+       margin: 10px;
+   }
+   
+   .blog figcaption{
+       padding: -10px;
+       text-align: left;
+       font-weight: bold;
+       font-size: 15px;
+       margin-top: 7px;
+   }
+   
+   .blog button{
+       margin-top: 7px;
+   }
+   
+   .img-jedan{
+    padding-left: 100px;
+   }
+   
+   
+@media all and (max-width: 480px){
+   
+       p {
+           font-size: 10px;
+       }
+   
+   
+       /* Koncept sekcija */
+     
+           .uvod {
+               background-size: cover;
+               background-position: center;
+               background-repeat: no-repeat;
+  
+               padding-bottom: 250px;
+           }
+           .koncept {
+               width: 80%;
+           }
+           .uvod h1,h2 {
+               font-size: 12px;
+           }
+   
+       /* Zablude sekcija */ 
+   
+         .slike-za-fleks img{
+           width: 300px;
+           height: 200px;
+         }
+   
+       /* Tablica kalorija */ 
+   
+         .img-jedan {
+           display: none;
+         }
+   
+         .blog{
+           margin:5px;
+         }
+         .mediaq{
+           font-size: 9px;
+         }   
+       }
+   
+   
+@media all and (min-width: 481px) and (max-width: 768px) {
+       p {
+           font-size: 11px;
+       }   
+  
+   
+       /* Koncept sekcija */
+     
+           .uvod {
+               background-size: cover;
+               background-position: center;
+               background-repeat: no-repeat;
+               padding: 200px;
+               padding-bottom: 250px;
+           }
+           .koncept {
+               width: 80%;
+           }
+           .uvod h1,h2 {
+               font-size: 13px;
+           }
+   
+       /* Zablude sekcija */ 
+   
+         .slike-za-fleks img{
+           width: 350px;
+           height: 200px;
+         }
+   
+       /* Tablica kalorija */ 
+   
+         .img-jedan {
+           display: none;
+         }
+   
+         .blog{
+           margin:5px;
+         }
+         .mediaq{
+           font-size: 10px;
+         }
+       }
+   
+   
+@media all and (min-width: 769px) and (max-width: 1024px) {
+        p {
+            font-size: 12px;
+        }
+    
+    
+        /* Koncept sekcija */
+      
+            .uvod {
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                padding: 370px;
+                padding-bottom: 250px;
+            }
+            .koncept {
+                width: 80%;
+            }
+            .uvod h1,h2 {
+                font-size: 14px;
+            }
+    
+        /* Zablude sekcija */ 
+    
+          .slike-za-fleks img{
+            width: 350px;
+            height: 200px;
+          }
+    
+        /* Tablica kalorija */ 
+    
+          .img-jedan {
+            display: none;
+          }
+    
+          .blog{
+            margin:5px;
+          }
+          .mediaq{
+            font-size: 11px;
+          }
+        }
+    
+@media all and (min-width: 1025px) and (max-width: 1200px) {
+            p {
+                font-size: 13px;
+            }
+        
+        
+            /* Koncept sekcija */
+          
+                .uvod {
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    padding: 500px;
+                    padding-bottom: 250px;
+                }
+                .koncept {
+                    width: 80%;
+                }
+                .uvod h1,h2 {
+                    font-size: 15px;
+                }
+        
+            /* Zablude sekcija */ 
+        
+              .slike-za-fleks img{
+                width: 350px;
+                height: 200px;
+              }
+        
+            /* Tablica kalorija */ 
+        
+              .img-jedan {
+                 margin-top: 100px;
+              }
+        
+              .blog{
+                margin:5px;
+              }
+              .mediaq{
+                font-size: 11px;
+              }
+            }
+
+            
+
+
+
