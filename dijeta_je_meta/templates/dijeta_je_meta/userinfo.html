@@ -1,0 +1,15 @@
+{% extends "dijeta_je_meta/base.html" %}
+
+{% block content %}
+<div id="page-container">
+{% for user in startuserweightandheight_list %}
+  <p>{{user.ime}}</p>
+  <p>{{user.trenutna_tezina}}</p>
+  <p>{{user.visina}}</p>
+  {% empty %}
+    <p>nothing</p>
+</div>
+{% endfor %}
+
+{% endblock %}
+

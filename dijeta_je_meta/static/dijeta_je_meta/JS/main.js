@@ -220,3 +220,6 @@ let childElements = document.getElementById('groceries').children; // returns an
 
 
 
+
+
+

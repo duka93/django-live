@@ -1,0 +1,191 @@
+html{
+    font-family: "Life savers";
+    scroll-behavior: smooth;
+   
+   }
+   
+   p{
+       font-size: 20px;
+   }
+   
+   *{
+       box-sizing: border-box;
+       padding: 0;
+       margin: 0;
+   }
+   
+   /*Header sekcija*/
+   
+   .navbar{
+       margin-bottom: 10px;
+       display: flex;
+       color: white;
+       font-weight: bold;
+       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+       font-size: 17px;
+       background-color: white;
+       width: 100%;
+       z-index:1;
+       padding: 5px;
+   }
+   
+   .vrh{
+       border-style:solid;
+       border-radius: 10px;
+       margin-left: 10px;
+       background-color: rgb(30, 152, 196);
+       margin-right: auto;
+       padding: 10px;
+    
+   }
+   
+   #elementi-liste-horizontalno{
+       display:flex;
+   
+   }
+   
+   
+   .navbar li{
+       margin-right: 5px; 
+       padding: 10px;
+   
+       /*ovako dobijamo razmak izmedju elemenata liste*/
+   }
+   
+   .decor{
+       background: #77C3EC;
+       border-style:solid; 
+       border-radius: 10px;
+   }
+   
+   .navbar a{
+       color: white;
+   }
+   .navbar a,a:visited{
+       text-decoration: none;
+   }
+
+
+ /*Block content*/
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+
+  }
+
+
+/*Footer*/
+   
+   
+footer{
+    background: linear-gradient(#77C3EC, #89CFF0, #9DD9F3, #B8E2F2);
+    height: 180px;
+    border-style: solid;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    border-color: rgb(228, 232, 232);
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-segment{
+    padding-top: 80px;
+    margin-left: 25px;
+    display: flex;
+}
+
+#marg{
+    margin-right: auto;
+}
+
+.right ul{
+    display: flex;
+    font-size: 20px;
+    list-style: none;
+}
+
+.right li{
+    padding-right: 20px;
+
+}
+
+footer a,a:visited{
+    text-decoration: none;
+}
+
+footer a{
+    color: white;
+    border-radius: 50%;
+    padding:9px;
+    border-style: solid;
+}
+
+#fb :hover{
+    background-color: rgb(66 103 178);
+    color: white;
+    transition-duration: 0.5s;
+}
+
+#ig :hover{
+ transition-duration: 0.5s;
+ background: #f09433; 
+ background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+ background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+ background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+ color: white;
+ }
+
+ #mail :hover{
+     background-color: gray;
+     color: white;
+     transition-duration: 0.5s;
+ }
+
+
+
+footer li{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media all and (max-width: 480px){
+   
+    p {
+        font-size: 10px;
+    }
+    }
+
+
+@media all and (min-width: 481px) and (max-width: 768px) {
+    p {
+        font-size: 11px;
+    }   
+    }
+
+
+@media all and (min-width: 769px) and (max-width: 1024px) {
+     p {
+         font-size: 12px;
+     }
+     }
+ 
+@media all and (min-width: 1025px) and (max-width: 1200px) {
+    p {
+        font-size: 13px;
+    }
+    }

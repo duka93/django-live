@@ -1,0 +1,47 @@
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dijeta je meta</title>
+    <link rel="stylesheet" href="{% static 'dijeta_je_meta/css/other.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Koulen&family=Life+Savers&family=Merriweather:ital@0;1&family=Philosopher&family=Radio+Canada:wght@500&display=swap" rel="stylesheet">
+</head>
+{% block head %}
+
+{% endblock %}
+
+<header>
+    <div class="navbar">
+      <a class="vrh" href="{% url 'home' %}"><i class="fa fa-home" id="cover10" class="modifikovanje-elemenata1"></i><p id="cover0" class="modifikovanje-elemenata"></p></a>
+      <nav>
+        <ul id="elementi-liste-horizontalno" class="enlarge" style="list-style: none;"> <!--u ovom "style delu izbacujemo bullet point"-->
+          <li class="decor"><p id="cover1" class="modifikovanje-elemenata"></p><a href="#zablude-h1" id="cover2" class="modifikovanje-elemenata1"><i class="fa fa-user-times"></i></a></li>
+          <li class="decor" ><p id="cover3" class="modifikovanje-elemenata"></p><a href="#tablica-kalorija" id="cover4" class="modifikovanje-elemenata1"><i class="fa fa-table"></i></a></li>
+          <li class="decor" ><p id="cover5"  class="modifikovanje-elemenata"></p><a href="{% url 'userinfo' %}" id="cover6" class="modifikovanje-elemenata1"><i class="fa fa-user-circle"></i></a></li>
+          <li class="decor" ><p id="cover7" class="modifikovanje-elemenata"></p><a href="blog.html" id="cover8" class="modifikovanje-elemenata1"><i class="fa fa-book"></i></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+{% block content %}
+
+{% endblock %}
+<footer id="footer">
+    <div class="footer-segment">
+     <p id="marg"> ® MD Solutions 2020</p>
+     <div class="right">
+      <ul>
+        <li class="mediaq">Pratite nas</li>
+        <li id="fb"><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
+        <li id="ig"><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+        <li id="mail"><a href="mailto:dusantime@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a></li>
+      </ul>
+     </div>
+    </div>
+  </footer>
+</body>
+</html>
