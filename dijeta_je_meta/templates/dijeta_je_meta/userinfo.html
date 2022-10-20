@@ -7,7 +7,7 @@
   <p>{{i.trenutna_tezina}}</p>
   <p>{{i.visina}}</p>
   {% empty %}
-    <p>nothing</p>
+    <a href="{% url 'createinfo' %}">Please enter your basic info</a>
 </div>
 {% endfor %}
 
