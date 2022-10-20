@@ -168,6 +168,9 @@ footer li{
     p {
         font-size: 10px;
     }
+    .mediaq{
+        font-size: 9px;
+      }   
     }
 
 
@@ -176,6 +179,9 @@ footer li{
         font-size: 11px;
     }   
     }
+    .mediaq{
+        font-size: 10px;
+      }
 
 
 @media all and (min-width: 769px) and (max-width: 1024px) {
@@ -183,9 +189,16 @@ footer li{
          font-size: 12px;
      }
      }
+     .mediaq{
+        font-size: 20px;
+      }
  
 @media all and (min-width: 1025px) and (max-width: 1200px) {
+
     p {
         font-size: 13px;
     }
+    .mediaq{
+        font-size: 20px;
+      }
     }
