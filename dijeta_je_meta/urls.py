@@ -7,5 +7,6 @@ urlpatterns = [
     path("overview/", views.userinfo, name='userinfo'),
     path("usercreate/",views.CreateInfo.as_view(), name="createinfo"),
     path("overview/addweight/",views.AddCurrentWeight.as_view(), name="currentweight" ),
-    path("overview/weightlist", views.ListCurrentWeight.as_view(),name="weightlist")
+    path("overview/weightlist", views.ListCurrentWeight.as_view(),name="weightlist"),
+    path("overview/history", views.history, name="history")
 ]

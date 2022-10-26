@@ -1,25 +1,39 @@
 {% extends "dijeta_je_meta/base.html" %}
 
 {% block content %}
-<div id="page-container">
+
 {% for i in info %}
   <p>Ime: {{i.ime}}</p>
   <p>Pocetna tezina: {{i.pocetna_tezina}} kg</p>
   <p>Visina: {{i.visina}} cm</p>
+  
+  <p>Idealna tezina: {{idealna_tezina}} kg</p>
+  <p>{{razlika_kg}}</p>
+  
+  <p>Trenutna tezina: {{trenutna_tezina}} kg</p>
+
+  {% if poslednji_unos %}
+  <p>Datum poslednjeg unosa: {{poslednji_unos|date:"d b Y"}}</p>
+  {% else %}
+  <p>Datum poslednjeg unosa: - Nemate jos nijedan unos </p>
+  {% endif %}
+  
+
+  {% if week_avg > 0 %}
+  <p>Prosečna težina od prethodnih 7 unosa: {{week_avg}} kg</p>
+  {% else %}
+  <p>Prosečna težina od prethodnih 7 unosa: Nemate jos 7 unosa</p>
+  {% endif %}
+  <p>BMI: {{bmi}}</p>
+  <p>Proteini</p>
+  <p>Ugljeni hidrati</p>
+  <p>Masti</p>
+  <a href="{% url 'currentweight' %}">Novi unos</a>
+  <a href="{% url 'weightlist' %}">Lista unosa</a>
+  <a href="{% url 'history' %}">Progres</a>
   {% empty %}
     <a href="{% url 'createinfo' %}">Unesite inicijani set podataka</a>
-</div>
 {% endfor %}
-<p>Trenutna tezina: {{trenutna_tezina}} kg</p>
-<p>Datum poslednjeg unosa: {{poslednji_unos}}</p>
-<a href="{% url 'currentweight' %}">Novi unos</a>
-
-<a href="{% url 'weightlist' %}">Lista unosa</a>
-
-<p>Proteini</p>
-<p>Ugljeni hidrati</p>
-<p>Masti</p>
-
 
 {% endblock %}
 

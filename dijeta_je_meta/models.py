@@ -16,7 +16,7 @@ class StartUserWeightAndHeight(models.Model):
         default=0,
         validators=[
             MaxValueValidator(400),
-            MinValueValidator(60)
+            MinValueValidator(45)
         ]
     )
     visina = models.IntegerField(
@@ -27,13 +27,7 @@ class StartUserWeightAndHeight(models.Model):
         ]
     )
 
-    moderate = "Umeren"
-    aggressive = "Agresivan"
-    diet_pace_choices = [
-        (moderate, "Umeren"),
-        (aggressive, "Agresivan")
-    ]
-    stepen_gubitka_tezine = models.CharField(max_length=20, choices=diet_pace_choices, default=moderate)
+
 
     pol_m = "Muški"
     pol_z = "Ženski"
@@ -52,5 +46,20 @@ class StartUserWeightAndHeight(models.Model):
 class CurrentWeight(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE,blank=True)
     date_added = models.DateTimeField(auto_now_add=True)
-    trenutna_tezina = models.IntegerField()
+    trenutna_tezina = models.IntegerField(
+              default=0,
+        validators=[
+            MaxValueValidator(400),
+            MinValueValidator(45)
+        ]
+    )
     detalji = models.TextField(blank=True)
+    class Meta:
+       ordering = ['-date_added']
+
+
+
+
+
+
+

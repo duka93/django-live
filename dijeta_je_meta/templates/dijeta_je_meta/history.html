@@ -1,0 +1,22 @@
+{% extends "dijeta_je_meta/base.html" %}
+
+{% block content %}
+<table>
+  <tr>
+    <td>Prosečna težina od prethodnih 7 unosa:</td>
+    <td>&nbsp;&nbsp;&nbsp; Datum početka unosa</td>
+    <td>&nbsp;&nbsp;&nbsp; Datum zavrsetka unosa</td>
+  <tr>
+   <tr></tr>
+
+  {% if lists %}
+      {% for first, second, third in lists %}
+          <tr>
+          <td>{{first}} kg</td>
+          <td>&nbsp;&nbsp;&nbsp;{{second}}</td>
+          <td>&nbsp;&nbsp;&nbsp; {{third}}</td>
+          </tr>
+      {% endfor %}
+  {% endif %}
+</table>
+{% endblock %}

@@ -10,10 +10,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Koulen&family=Life+Savers&family=Merriweather:ital@0;1&family=Philosopher&family=Radio+Canada:wght@500&display=swap" rel="stylesheet">
 </head>
+
 {% block head %}
 
 {% endblock %}
 
+
+<body>
 <header>
     <div class="navbar">
       <a class="vrh" href="{% url 'home' %}"><i class="fa fa-home" id="cover10" class="modifikovanje-elemenata1"></i><p id="cover0" class="modifikovanje-elemenata"></p></a>
@@ -32,9 +35,12 @@
       </nav>
     </div>
   </header>
+
+<div class="allButFooter">
 {% block content %}
 
 {% endblock %}
+</div>
 <footer id="footer">
     <div class="footer-segment">
      <p id="marg"> ® MD Solutions 2020</p>
