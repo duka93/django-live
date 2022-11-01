@@ -5,7 +5,7 @@ from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.contrib.auth.models import User
 from django import forms
-
+import datetime
 
 # Create your models here.
 
@@ -27,20 +27,20 @@ class StartUserWeightAndHeight(models.Model):
         ]
     )
 
-
-
     pol_m = "Muški"
     pol_z = "Ženski"
-
     polovi = [
         (pol_m,"Muški"),
         (pol_z,"Ženski")
     ]
     pol = models.CharField(max_length=6, choices=polovi,default=pol_m)
 
-    
     def __str__(self):
         return self.ime + " - Pocetna tezina i visina"
+    
+    def get_absolute_url(self):
+        return "/overview"
+    
 
 
 class CurrentWeight(models.Model):
@@ -56,6 +56,10 @@ class CurrentWeight(models.Model):
     detalji = models.TextField(blank=True)
     class Meta:
        ordering = ['-date_added']
+    def __str__(self):
+        return f"Datum: {datetime.datetime.strftime(self.date_added, '%d-%b-%Y')} Tezina: {self.trenutna_tezina}kg"
+    def get_absolute_url(self):
+        return "/overview/weightlist"
 
 
 

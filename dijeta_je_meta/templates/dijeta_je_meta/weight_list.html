@@ -1,15 +1,15 @@
 {% extends "dijeta_je_meta/base.html" %}
 
-
-
 {% block content %}
 
 {% for weight in currentweight_list %}
 
-
   <p>Datum unosa: {{weight.date_added|date:"d b Y"}}</p>
   <p>Trenutna tezina: {{weight.trenutna_tezina}} kg</p>
   <p>Posebni detalji: {{weight.detalji}} cm</p>
+  <a href="{% url 'update_weight' weight.id %}"><button>Update weight</button></a>
+  <a href="{% url 'delete_weight' weight.id %}"><button>Delete weight</button></a>
+  
   {% empty %}
     <a href="{% url 'currentweight' %}">Prvi unos</a>
 

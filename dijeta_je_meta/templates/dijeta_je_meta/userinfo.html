@@ -1,39 +1,50 @@
 {% extends "dijeta_je_meta/base.html" %}
 
+
 {% block content %}
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
 
 {% for i in info %}
   <p>Ime: {{i.ime}}</p>
   <p>Pocetna tezina: {{i.pocetna_tezina}} kg</p>
   <p>Visina: {{i.visina}} cm</p>
-  
   <p>Idealna tezina: {{idealna_tezina}} kg</p>
-  <p>{{razlika_kg}}</p>
+  <a href="{% url 'updateinfo' i.id %}"> <button>Promeni informacije</button></a>
+  <p>{{razlika}}</p>
+  <p>{{prosek}}</p>
+  <p>{{kraj}}</p>
   
   <p>Trenutna tezina: {{trenutna_tezina}} kg</p>
-
   {% if poslednji_unos %}
   <p>Datum poslednjeg unosa: {{poslednji_unos|date:"d b Y"}}</p>
   {% else %}
-  <p>Datum poslednjeg unosa: - Nemate jos nijedan unos </p>
+  <p>Datum poslednjeg unosa: - Nemate nijedan unos </p>
   {% endif %}
-  
-
   {% if week_avg > 0 %}
   <p>Prosečna težina od prethodnih 7 unosa: {{week_avg}} kg</p>
   {% else %}
-  <p>Prosečna težina od prethodnih 7 unosa: Nemate jos 7 unosa</p>
+  <p>Prosečna težina od prethodnih 7 unosa: Nemate 7 unosa</p>
   {% endif %}
+
   <p>BMI: {{bmi}}</p>
-  <p>Proteini</p>
-  <p>Ugljeni hidrati</p>
-  <p>Masti</p>
-  <a href="{% url 'currentweight' %}">Novi unos</a>
-  <a href="{% url 'weightlist' %}">Lista unosa</a>
-  <a href="{% url 'history' %}">Progres</a>
+  <p>Unos kalorija {{kalorije}}kcal</p>
+  <p>Proteini: {{proteini}}g</p>
+  <p>Ugljeni hidrati: {{carbs}}g</p>
+  <p>Masti: {{masti}} g</p>
+  <a href="{% url 'currentweight' %}"><button>Novi unos</button></a>
+  <a href="{% url 'weightlist' %}"><button>Lista prethodnih unosa</button></a>
+  <a href="{% url 'history' %}"><button>Progres</button></a>
   {% empty %}
     <a href="{% url 'createinfo' %}">Unesite inicijani set podataka</a>
 {% endfor %}
 
 {% endblock %}
+
 

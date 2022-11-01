@@ -1,0 +1,13 @@
+{% extends "dijeta_je_meta/base.html" %}
+
+{% block content %}
+<h1>Uputstvo</h1>
+<p>Dobrodošli! Ovaj deo sajta je namenjen da bi Vam pomogao da lakše dođete do vaših ciljeva po pitanju gubitka težine.</p>
+<p>Koncipiran je tako da svaki dan u toku nedelje treba da unesete trenutnu težinu i da na kraju nedelje dobijete prosek iste. Promene težine pratimo na nedeljnom nivou a ne na dnevnom, jer na dnevnom nivou ne znače nista zato što je nivo fluktuacija velik i zavisi od mnogo faktora:</p>
+<ul>
+    <li>- Unosa ugljenih hidrata prethodnog dana</li>
+    <li>- Unosa vode</li>
+    <li>- Stresa</li>
+</ul>
+<a href="{% url 'userinfo' %}"><button>Nastavi</button></a>
+{% endblock %}

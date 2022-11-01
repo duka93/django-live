@@ -1,0 +1,11 @@
+{% extends "dijeta_je_meta/base.html" %}
+
+{% block content %}
+<form  method="post">
+    {% csrf_token %}
+    <p>Da li ste sigurni da zelite da obrisete unos - {{object}} ?</p>
+    <input type="submit" value="Želim">
+    <a href="{% url 'weightlist' %}"><button>Ne želim</button></a>
+</form>
+
+{% endblock %}

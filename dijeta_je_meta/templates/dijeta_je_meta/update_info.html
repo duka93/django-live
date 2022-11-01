@@ -4,7 +4,8 @@
 <form action="" method="post">
     {% csrf_token %}
     {{form.as_p}}
-    <input type="submit" value="Dodaj novu težinu">
+    <input type="submit" value="Potvrdi">
+    <a href="{% url 'userinfo' %}"><button>Otkaži</button></a>
 </form>
 
 {% endblock %}

@@ -13,3 +13,18 @@ class AddCurrentWeight(forms.ModelForm):
     class Meta:
         model = CurrentWeight
         fields = ['trenutna_tezina','detalji']
+
+
+
+class UpdateStartWeightAndHeight(forms.ModelForm):
+    class Meta:
+      model = StartUserWeightAndHeight
+      fields = ['ime', 'pocetna_tezina', 'visina']
+    
+
+
+
+class UpdateWeightForm(forms.ModelForm):
+    class Meta:
+        model = CurrentWeight
+        fields = ['trenutna_tezina', 'detalji']

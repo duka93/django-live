@@ -17,14 +17,12 @@ document.getElementById('cover2').addEventListener('mouseover',eventHandle2)
 let cover3 = document.getElementById('cover3');
 
 const eventHandle4 = function(){
-    cover3.innerHTML = 'Tablica kcal &nbsp;';
     cover3.style.fontSize = '17px';
     cover3.style.display = 'inline-block';
     cover3.style.transitionDuration = '0.5s'
     cover3.style.transitionDelay = '0.1s'
 }
 document.getElementById('cover4').addEventListener('mouseover',eventHandle4)
-
 
 
 let cover0 = document.getElementById('cover0');
@@ -62,7 +60,7 @@ document.getElementById('cover6').addEventListener('mouseover',eventHandle8)
 let cover7 = document.getElementById('cover7');
 
 const eventHandle13 = function(){
-    cover7.innerHTML = 'Blog &nbsp;';
+    cover7.innerHTML = 'Uputstvo &nbsp;';
     cover7.style.fontSize = '17px';
     cover7.style.display = 'inline-block';
     cover7.style.transitionDuration = '0.5s'

@@ -6,17 +6,25 @@
     <td>Prosečna težina od prethodnih 7 unosa:</td>
     <td>&nbsp;&nbsp;&nbsp; Datum početka unosa</td>
     <td>&nbsp;&nbsp;&nbsp; Datum zavrsetka unosa</td>
+    <td>&nbsp;&nbsp;&nbsp; Odstupanje od idealne težine</td>
   <tr>
    <tr></tr>
 
   {% if lists %}
-      {% for first, second, third in lists %}
+      {% for first, second, third, fourth in lists %}
           <tr>
           <td>{{first}} kg</td>
           <td>&nbsp;&nbsp;&nbsp;{{second}}</td>
           <td>&nbsp;&nbsp;&nbsp; {{third}}</td>
+          <td>&nbsp;&nbsp;&nbsp; {{fourth}}  kg</td>
           </tr>
       {% endfor %}
+  {% else %}
+  <td>Nema dovoljno unosa</td>
+  <td>&nbsp;&nbsp;&nbsp; Nema dovoljno unosa</td>
+  <td>&nbsp;&nbsp;&nbsp; Nema dovoljno unosa</td>
+  <td>&nbsp;&nbsp;&nbsp; Nema dovoljno unosa</td>
+
   {% endif %}
 </table>
 {% endblock %}
