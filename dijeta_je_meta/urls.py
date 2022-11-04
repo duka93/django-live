@@ -14,3 +14,7 @@ urlpatterns = [
     path("overview/weightlist/<pk>/delete", views.DeleteCurrentWeight.as_view(),name="delete_weight"),
     path("instructions/",views.instructions_view, name="instructions")
 ]
+
+
+
+

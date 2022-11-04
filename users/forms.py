@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 
 class SignUpForm(UserCreationForm):
+    error_css_class = 'error2'
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class':'form-control'}))
     class Meta:
         model = User

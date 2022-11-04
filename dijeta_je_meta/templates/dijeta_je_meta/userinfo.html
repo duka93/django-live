@@ -16,7 +16,6 @@
   <p>Pocetna tezina: {{i.pocetna_tezina}} kg</p>
   <p>Visina: {{i.visina}} cm</p>
   <p>Idealna tezina: {{idealna_tezina}} kg</p>
-  <a href="{% url 'updateinfo' i.id %}"> <button>Promeni informacije</button></a>
   <p>{{razlika}}</p>
   <p>{{prosek}}</p>
   <p>{{kraj}}</p>
@@ -38,9 +37,12 @@
   <p>Proteini: {{proteini}}g</p>
   <p>Ugljeni hidrati: {{carbs}}g</p>
   <p>Masti: {{masti}} g</p>
-  <a href="{% url 'currentweight' %}"><button>Novi unos</button></a>
-  <a href="{% url 'weightlist' %}"><button>Lista prethodnih unosa</button></a>
-  <a href="{% url 'history' %}"><button>Progres</button></a>
+  <div class="button-div">
+    <a href="{% url 'updateinfo' i.id %}" class="button"> Promeni osnovne informacije</a>
+    <a href="{% url 'currentweight' %}"class="button">Novi unos</a>
+    <a href="{% url 'weightlist' %}" class="button">Lista prethodnih unosa</a>
+    <a href="{% url 'history' %}" class="button">Progres</a>
+  </div>
   {% empty %}
     <a href="{% url 'createinfo' %}">Unesite inicijani set podataka</a>
 {% endfor %}

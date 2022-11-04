@@ -1,4 +1,7 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'dijeta_je_meta/css/other.css' %}">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="shortcut icon" type="image/png" href="{% static 'dijeta_je_meta/images/favicon.png' %}"/>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
@@ -12,13 +15,13 @@
                     <div id="login-box" class="col-md-12">
                         <form id="login-form" class="form" action="" method="post">
                             {% csrf_token %}
-                            <h3 class="text-center text-info">Registracija</h3>
+                            <h3  id="move" class="text-center text-info">Registracija</h3>
                             <div class="form-group">
-                                <div class='error'>{{form.errors.username}}</div>
+                                <div class='error2'>{{form.errors.username}}</div>
                                 <input type="text" name="username" id="username" class="form-control", placeholder="Username">
                             </div>
                             <div class="form-group">
-                                <div class='error'>{{form.errors.email}}</div>
+                                <div class='error2'>{{form.errors.email}}</div>
                                 <input type="email" name="email" id="username" class="form-control" placeholder="Email">
                             </div>
                             <div class="form-group">
@@ -26,7 +29,7 @@
                                 <input type="password" name="password1" id="username" class="form-control" placeholder="Password">
                             </div>
                             <div class="form-group">
-                                <div class='error'>{{form.errors.password2}}</div>
+                                <div class='error2'>{{form.errors.password2}}</div>
                                 <input type="password" name="password2" id="username" class="form-control" placeholder="Potvrdi password">
                             </div>
                             <input type="submit" name="submit" class="btn btn-info btn-md" value="Registruj se">

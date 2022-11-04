@@ -38,7 +38,7 @@ html{
        border-style:solid;
        border-radius: 10px;
        margin-left: 10px;
-       background-color: rgb(30, 152, 196);
+       background: #77C3EC;
        margin-right: auto;
        padding: 10px;
     
@@ -151,11 +151,105 @@ footer li{
 
 
 
-.form-control{
-    padding: 100px;
+/* dugmad na userinfu */
+.button-div{
+    margin-top: 50px;
+}
+
+/* dugmad na listi unosa */
+.button-div2{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.button{
+    padding: 7px;
+    background-color: rgb(30, 152, 196);
+    color: white;
+    font-size: 17px;
+    border-style: solid;
+    border-radius: 14px;
+    border-color:  rgb(30, 152, 196);
+    font-weight: 1000;
+    margin-right: 4px;
+    text-decoration: none;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+
+}
+
+.button:hover{
+    border-color:  rgb(14, 79, 209);
+    background-color: rgb(14, 79, 209);
+    transition-duration: 0.5s;
+}
+
+/* errori na loginu */
+.error{
+    background-color: rgb(232, 39, 39);
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* errori na sign upu */
+.error2{
+    text-decoration: none;
+    background-color: rgb(232, 39, 39);
+    color: white;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+
+/* login i register */
+#move{
+    padding: 50px;
+}
+
+.delete-button{
+    padding: 8px;
+    background-color: rgb(223, 76, 76);
+    color: white;
+    font-size: 17px;
+    border-style: solid;
+    border-radius: 14px;
+    background-color: rgb(223, 76, 76);
+    font-weight: 1000;
+    margin-right: 4px;
+    text-decoration: none;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.delete-button:hover{
+    border-color:  rgb(214, 6, 6);
+    background-color: rgb(214, 6, 6);
+    transition-duration: 0.5s;
 }
 
 
+/* pagination */
+.pagination a.active {
+    background-color: rgb(85, 84, 84);
+    color: white;
+    text-decoration: none;
+  }
+  
+.pagination a:hover:not(.active) {background-color: lightgray;}
+
+.pagination a {
+    border: 1px solid darkblue; /* Gray */
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-decoration: none;
+    color: black;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  }
+
+.pagination{
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
 
 
 

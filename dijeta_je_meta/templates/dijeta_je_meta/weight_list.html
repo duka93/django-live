@@ -6,13 +6,38 @@
 
   <p>Datum unosa: {{weight.date_added|date:"d b Y"}}</p>
   <p>Trenutna tezina: {{weight.trenutna_tezina}} kg</p>
-  <p>Posebni detalji: {{weight.detalji}} cm</p>
-  <a href="{% url 'update_weight' weight.id %}"><button>Update weight</button></a>
-  <a href="{% url 'delete_weight' weight.id %}"><button>Delete weight</button></a>
+  <p>Detalji o ishrani: {{weight.detalji}} cm</p>
+  <div class="button-div2">
+  <a href="{% url 'update_weight' weight.id %}" class="button">Promenite težinu</a>
+  <a href="{% url 'delete_weight' weight.id %}" class="delete-button">Izrbrišite težinu</a>
+  </div>
   
   {% empty %}
     <a href="{% url 'currentweight' %}">Prvi unos</a>
 
 {% endfor %}
+
+<div class="pagination">
+  {% if is_paginated %}
+  {% if page_obj.has_previous %}
+    <a  href="?page=1">Prva</a>
+    <a href="?page={{ page_obj.previous_page_number }}">Prethodna</a>
+  {% endif %}
+  {% for num in page_obj.paginator.page_range %}
+    {% if page_obj.number == num %}
+      <a class="active" href="?page={{ num }}">{{num}}</a>
+     {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+       <a  href="?page={{ num }}">{{num}}</a>
+    {% endif %}
+  {% endfor %}
+
+  {% if page_obj.has_next %}
+     <a href="?page={{ page_obj.next_page_number }}">Sledeća</a>
+     <a href="?page={{ page_obj.paginator.num_pages }}">Poslednja</a>
+  {% endif %}
+
+  {% endif %}
+  </div>
+
 {% endblock %}
 
