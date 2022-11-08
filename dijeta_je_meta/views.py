@@ -55,9 +55,9 @@ class WeightAndMacros:
                 end_date += datetime.timedelta(days = 7)
                 self.trenutna -= avg_per_week
 
-            razlika = f"Ukupno treba da izgubite jos: {round(razlika_kg,1)} kg"
+            razlika = f"Ukupno treba da izgubite još: {round(razlika_kg,1)} kg"
             avg_gain_loss = f"U toku narednih 7 unosa treba da izgubite: {round(avg_per_week,1)} kg"
-            end_day = f"Idealan datum završetka dijete: {datetime.datetime.strftime(end_date, '%d-%b-%Y')}"
+            end_day = f"Idealan datum završetka dijete: {datetime.datetime.strftime(end_date, '%d-%m-%Y')}"
 
         elif self.trenutna == self.idealna:
             razlika = f"Čestitamo, postigli ste željenu kilažu!"
@@ -71,9 +71,9 @@ class WeightAndMacros:
                 end_date += datetime.timedelta(days = 7)
                 self.trenutna += avg_per_week
 
-            razlika = f"Ukupno treba da se ugojite jos: {razlika_kg} kg"
-            avg_gain_loss = f"U toku narednih 7 unosa treba da dobijete: {round(avg_per_week,1)} kg"
-            end_day = f"Idealan datum završetka dijete: {datetime.datetime.strftime(end_date, '%d-%b-%Y')}"
+            razlika = f"Ukupno treba da se ugojite još: {round(razlika_kg,1)} kg"
+            avg_gain_loss = f"U toku narednih 7 unosa treba da se ugojite: {round(avg_per_week,1)} kg"
+            end_day = f"Idealan datum završetka dijete: {datetime.datetime.strftime(end_date, '%d-%m-%Y')}"
 
         context['razlika'] = razlika
         context['prosek'] = avg_gain_loss
@@ -203,7 +203,7 @@ class AddCurrentWeight(LoginRequiredMixin,CreateView):
     success_url = reverse_lazy("userinfo")
     def form_valid(self, form): # Sa ovim oznacavmo da se instanca nove pice se pridodaje trenutnom useru
        form.instance.owner = self.request.user
-       messages.success(self.request,'Uspešno ste dodali novu tezinu!')
+       messages.success(self.request,'Uspešno ste dodali novu težinu!')
        return super().form_valid(form)
 
 

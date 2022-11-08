@@ -1,52 +1,135 @@
 {% extends "dijeta_je_meta/base.html" %}
+{% load static %}
 
 
 {% block content %}
 
+<p id="first-header">Idealna težina i unos kalorija</p>
+
 {% if messages %}
 <ul class="messages">
     {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    <h1{% if message.tags %} class="{{ message.tags }}"{% endif %}> <i class="fa fa-check"></i>{{ message }}</h1>
     {% endfor %}
 </ul>
 {% endif %}
 
-{% for i in info %}
-  <p>Ime: {{i.ime}}</p>
-  <p>Pocetna tezina: {{i.pocetna_tezina}} kg</p>
-  <p>Visina: {{i.visina}} cm</p>
-  <p>Idealna tezina: {{idealna_tezina}} kg</p>
-  <p>{{razlika}}</p>
-  <p>{{prosek}}</p>
-  <p>{{kraj}}</p>
+<div class="center-main">
+<div id="userinfo">
+
+  {% for i in info %}
   
-  <p>Trenutna tezina: {{trenutna_tezina}} kg</p>
-  {% if poslednji_unos %}
-  <p>Datum poslednjeg unosa: {{poslednji_unos|date:"d b Y"}}</p>
-  {% else %}
-  <p>Datum poslednjeg unosa: - Nemate nijedan unos </p>
-  {% endif %}
-  {% if week_avg > 0 %}
-  <p>Prosečna težina od prethodnih 7 unosa: {{week_avg}} kg</p>
-  {% else %}
-  <p>Prosečna težina od prethodnih 7 unosa: Nemate 7 unosa</p>
-  {% endif %}
+    <h2 class="info-header">Osnovne informacije - {{i.ime}}</h2>
+    <div class="inner-info">
+      <div class="info-flex">
+        <div id="space">
+          <p>Početna težina:</p>
+          <p class="info-highlight"> {{i.pocetna_tezina}} kg</p>
+        </div>
+        <div>
+          <p>Visina:</p>
+          <p class="info-highlight"> {{i.visina}} cm</p>
+        </div>
+      </div>
+      <div class="center">
+        <div>
+          <p>Idealna težina: </p>
+          <p class="info-highlight">{{idealna_tezina}} kg</p>
+        </div>
+        <img src="../../static/dijeta_je_meta/images/ideal logo.png" alt="idealna tezina" class="resize">
+      </div>
+      <div class="center">
+        <a href="{% url 'updateinfo' i.id %}" class="button" id="info-button">Promeni osnovne informacije</a>
+      </div>
+    </div>
 
-  <p>BMI: {{bmi}}</p>
-  <p>Unos kalorija {{kalorije}}kcal</p>
-  <p>Proteini: {{proteini}}g</p>
-  <p>Ugljeni hidrati: {{carbs}}g</p>
-  <p>Masti: {{masti}} g</p>
-  <div class="button-div">
-    <a href="{% url 'updateinfo' i.id %}" class="button"> Promeni osnovne informacije</a>
-    <a href="{% url 'currentweight' %}"class="button">Novi unos</a>
-    <a href="{% url 'weightlist' %}" class="button">Lista prethodnih unosa</a>
-    <a href="{% url 'history' %}" class="button">Progres</a>
+    <h2 class="info-header">Podaci o dijeti</h2>
+    <div class="center">
+    <div class="inner-info">
+      {% if week_avg > 0 %}
+      <img src="../../static/dijeta_je_meta/images/scale_logo2.png" alt="idealna tezina" class="resize2" class="center">
+      <div class="p-space">
+        <p>Prosečna težina od prethodnih 7 unosa: </p>
+        <p class="info-highlight"> {{week_avg}} kg </p>
+      </div>
+      {% else %}
+      <img src="../../static/dijeta_je_meta/images/scale_logo2.png" alt="slika vage" class="resize2" class="center">
+      <div class="p-space">
+        <p>Prosečna težina od prethodnih 7 unosa: </p>
+        <p class="info-highlight"> Nemate 7 unosa </p>
+      </div>
+      {% endif %}
+      <div class="p-space">
+        <p>{{prosek|slice:43}}</p>
+        <p class="info-highlight">{{prosek|slice:"43:51"}}</p>
+      </div>
+      <img src="../../static/dijeta_je_meta/images/target-icon-png-17.png" alt="slika mete" class="resize2" class="center">
+      <div class="p-space">
+        <p>{{razlika|slice:30}}</p>
+        <p class="info-highlight">{{razlika|slice:"30:"}}</p>
+      </div>
+      <div class="p-space">
+        <p>Težina danas:</p>
+        <p class="info-highlight">{{trenutna_tezina}} kg</p>
+      </div>
+      <img src="../../static/dijeta_je_meta/images/c1-removebg-preview.png" alt="slika kalendara" class="resize2" class="center">
+      <div class="p-space">
+        <p>{{kraj|slice:31}}</p>
+        <p class="info-highlight">{{kraj|slice:"31:"}}</p>
+      </div>
+      {% if poslednji_unos %}
+      <div class="p-space">
+        <p>Datum poslednjeg unosa:</p>
+        <p class="info-highlight">{{poslednji_unos|date:"d-m-Y"}}</p>
+      </div>
+      {% else %}
+      <p>Datum poslednjeg unosa: - Nemate nijedan unos </p>
+      {% endif %}
+      <a href="{% url 'currentweight' %}"class="button">Novi unos</a>
+      <a href="{% url 'weightlist' %}" class="button">Lista prethodnih unosa</a>
+      <a href="{% url 'history' %}" class="button">Progres</a>
+    </div>
   </div>
-  {% empty %}
-    <a href="{% url 'createinfo' %}">Unesite inicijani set podataka</a>
-{% endfor %}
+    
+  <h2 class="info-header">Unos kalorija i makronutrijenata</h2>
+  <div class="inner-info">
+    <div class="info-flex">
+      <div class="macro">
+        <img src="../../static/dijeta_je_meta/images/images.png" alt="slika kokoske" class="resize2" class="center">
+        <p class="underline">Proteini</p>
+        <p class="info-highlight">{{proteini}}g</p>
+      </div>
+      <div class="macro">
+        <div class="center">
+        <img src="../../static/dijeta_je_meta/images/banana-3-xxl.png" alt="slika banane" class="resize2">
+        <p class="underline">Ugljeni hidrati</p>
+        <p class="info-highlight">{{carbs}}g</p>
+      </div>
+      </div>
+      <div class="macro">
+        <div class="center">
+        <img src="../../static/dijeta_je_meta/images/png-clipart-computer-icons-avocado-fruit-avocados-food-text-removebg-preview.png" alt="slika banane" class="resize2">
+        <p class="underline">Masti</p>
+        <p class="info-highlight">{{masti}}g</p>
+      </div>
+      </div>
+      <div class="macro">
+        <div class="center">
+        <img src="../../static/dijeta_je_meta/images/Screenshot_4-removebg-preview.png" alt="slika banane" class="resize2">
+        <p class="underline">Kalorije</p>
+        <p class="info-highlight">{{kalorije}}kcal</p>
+      </div>
+      </div>
 
+    </div>
+    <p class="macro">BMI: <span class="info-highlight">{{bmi}} - </span>Normalne vrednosti su između 20 i 25.</p>
+  </div>
+
+    {% empty %}
+      <a href="{% url 'createinfo' %}">Unesite inicijani set podataka</a>
+  {% endfor %}
+</div>
+</div>
 {% endblock %}
 
 

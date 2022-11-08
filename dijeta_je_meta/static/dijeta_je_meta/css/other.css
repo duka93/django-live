@@ -1,20 +1,23 @@
 html{
-    font-family: "Life savers";
+    font-family: 'Abril Fatface', cursive;
+    font-family: 'Koulen', cursive;
+    font-family: 'Life Savers', cursive;
+    font-family: 'Merriweather', serif;
+    font-family: 'Philosopher', sans-serif;
+    font-family: 'Radio Canada', sans-serif;
     scroll-behavior: smooth;
    
    }
 
-   p{
-       font-size: 20px;
-   }
    
    *{
        box-sizing: border-box;
        padding: 0;
        margin: 0;
    }
-   
-
+   p{
+    font-size: 25px;
+   }
 
 
 
@@ -74,7 +77,7 @@ html{
 
 /*Footer*/
 .allButFooter {
-    min-height: calc(100vh - 245px);
+    min-height: calc(100vh - 200px);
 }
    
 footer{
@@ -144,17 +147,10 @@ footer a{
 
 
 
-footer li{
-    font-size: 20px;
-    font-weight: bold;
-}
-
 
 
 /* dugmad na userinfu */
-.button-div{
-    margin-top: 50px;
-}
+
 
 /* dugmad na listi unosa */
 .button-div2{
@@ -166,20 +162,16 @@ footer li{
     padding: 7px;
     background-color: rgb(30, 152, 196);
     color: white;
-    font-size: 17px;
     border-style: solid;
     border-radius: 14px;
     border-color:  rgb(30, 152, 196);
     font-weight: 1000;
-    margin-right: 4px;
     text-decoration: none;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
-
 }
 
 .button:hover{
-    border-color:  rgb(14, 79, 209);
-    background-color: rgb(14, 79, 209);
+    color: rgb(30, 152, 196);
+    background-color: white;
     transition-duration: 0.5s;
 }
 
@@ -217,7 +209,6 @@ footer li{
     font-weight: 1000;
     margin-right: 4px;
     text-decoration: none;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 .delete-button:hover{
@@ -247,10 +238,121 @@ footer li{
   }
 
 .pagination{
-  margin-top: 60px;
+  margin-top: 70px;
   margin-bottom: 60px;
 }
 
+/* Profilna strana */
+
+#first-header{
+    background-color: rgb(30, 152, 196);
+    color: white;
+    font-weight: bold;
+    padding:50px;
+    font-size: 30px; 
+}
+
+.messages{
+    width: 100%;
+    padding: 25px;
+    border-style: solid;
+    border-color: rgb(181, 249, 181);
+    background-color: rgb(188, 248, 188);
+    color: darkgreen;
+    border-radius: 5px;
+    font-weight: bold;
+    opacity: 0.6;
+    font-size: 10px;
+    text-align: center;
+ }
+
+.center-main{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+
+#userinfo{
+    background-color: rgb(244, 244, 244);
+    border-radius: 5px;
+}
+
+.info-header{
+    background-color: rgb(30, 152, 196);
+    color: white;
+    font-weight: bold;
+    padding: 25px;
+    border-radius: 5px;
+}
+
+.inner-info{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    background-color: white;
+    color: rgb(4, 100, 135);
+    margin: 20px;
+    border-color: rgb(221, 219, 219);
+    border-style: solid;
+}
+
+.info-flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#space{
+    margin-right: auto;
+}
+
+.center{
+    text-align:center;
+    position:relative;
+}
+
+.resize{
+    width: 150px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#info-button{
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.info-highlight{
+    text-align: center;
+    margin-top: 15px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.p-space{
+   margin-bottom: 40px;
+}
+
+.resize2{
+    width: 80px;
+    margin-bottom: 40px;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+.macro{
+    margin-bottom: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
 
 
 @media all and (max-width: 480px){
@@ -261,9 +363,16 @@ footer li{
         font-size: 15px;
       }
     p {
+        font-size: 14px;
+    }
+    .info-highlight{
         font-size: 20px;
     }
-   
+    .button{
+        padding: 3px;
+        font-size: 11px;
+    }
+
     }
 
 

@@ -83,3 +83,9 @@ modifikovanjeElemenata1.forEach(element => {
  modifikovanjeElemenata.forEach(element => {
     element.style.fontSize = '0px';
  })
+
+
+
+
+
+
