@@ -1,10 +1,45 @@
 {% extends "dijeta_je_meta/base.html" %}
 
 {% block content %}
+<style>
+  html{
+    background-image: url("../../static/dijeta_je_meta/images/chopping-board-surrounded-with-vegetables-eggs-rice-grains-desk_50_1_50.jpg");
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    background-position: 0% 40%;
+  }
+  @media all and (max-width: 480px){
+    html{
+        background-image: url("../../static/dijeta_je_meta/images/chopping-board-surrounded-with-vegetables-eggs-rice-grains-desk_50_1_50.jpg");
+        background-repeat: no-repeat;
+        background-size:100% 68%;
+        background-position: 0% 40%;}
+  }
+</style>
+
+<h1 id="first-header">Novi unos</h1>
 <form action="" method="post">
     {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Dodaj novu težinu" class="button">
+    <div class="center-form">
+        <div class="change-info">
+        
+        <div>
+          <div class="error2">{{form.errors.trenutna_tezina}}</div>
+          <input type="number" required name="trenutna_tezina"  class="input-class" id="gray-change" placeholder="Trenutna težina">
+        </div>
+  
+        <div class="marg-bot">
+          <textarea name="detalji" rows="4" cols="62.5" placeholder="Detalji o ishrani" id="gray-change"></textarea>
+        </div>
+        
+
+        <div id="elementi-liste-horizontalno">
+          <input type="submit" value="Dodaj novu težinu" class="button">
+          <a href="{% url 'userinfo' %}" class="button3">Otkaži</a>
+        </div>
+        
+        </div>
+    </div>
 </form>
 
 {% endblock %}

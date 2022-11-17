@@ -4,22 +4,41 @@
 
 {% block content %}
 
-<p id="first-header">Idealna težina i unos kalorija</p>
-
-{% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <h1{% if message.tags %} class="{{ message.tags }}"{% endif %}> <i class="fa fa-check"></i>{{ message }}</h1>
-    {% endfor %}
-</ul>
-{% endif %}
-
-<div class="center-main">
-<div id="userinfo">
-
   {% for i in info %}
-  
-    <h2 class="info-header">Osnovne informacije - {{i.ime}}</h2>
+
+
+  {% if messages %}
+  <ul class="messages">
+      {% for message in messages %}
+      <h1{% if message.tags %} class="{{ message.tags }}"{% endif %}> <i class="fa fa-check"></i> {{ message }}</h1>
+      {% endfor %}
+  </ul>
+  {% endif %}  
+
+  <div class="circle-back">
+  <div class="center-main">
+
+    <div class="start-text">
+    <p>Zdravo, {{i.ime}}</p>
+    <p class="head">Nastavi uspešno!</p>
+    </div>
+   </div>
+ 
+   
+
+  {% if week_avg > 0 %}
+  <div class="center-main">
+    <div class="progres-border">
+     <p class="progres-font">{{progres}}%</p>
+     <p>idealnih kg</p>
+    </div>
+  </div>
+  {% endif %}
+  </div> 
+
+  <div class="center-main">
+    <div id="userinfo">
+    <h2 class="info-header">Osnovne informacije</h2>
     <div class="inner-info">
       <div class="info-flex">
         <div id="space">
@@ -39,7 +58,7 @@
         <img src="../../static/dijeta_je_meta/images/ideal logo.png" alt="idealna tezina" class="resize">
       </div>
       <div class="center">
-        <a href="{% url 'updateinfo' i.id %}" class="button" id="info-button">Promeni osnovne informacije</a>
+        <a href="{% url 'updateinfo' i.id %}" class="button" id="info-button"><i class="fa fa-id-badge"></i> Promeni osnovne informacije</a>
       </div>
     </div>
 
@@ -83,11 +102,11 @@
         <p class="info-highlight">{{poslednji_unos|date:"d-m-Y"}}</p>
       </div>
       {% else %}
-      <p>Datum poslednjeg unosa: - Nemate nijedan unos </p>
+      <p class="p-space">Datum poslednjeg unosa:  Nemate nijedan unos </p>
       {% endif %}
-      <a href="{% url 'currentweight' %}"class="button">Novi unos</a>
-      <a href="{% url 'weightlist' %}" class="button">Lista prethodnih unosa</a>
-      <a href="{% url 'history' %}" class="button">Progres</a>
+      <a href="{% url 'currentweight' %}"class="button">+ Novi unos</a>
+      <a href="{% url 'weightlist' %}" class="button"><i class="fa fa-list-ul"></i> Lista prethodnih unosa</a>
+      <a href="{% url 'history' %}" class="button"><i class="fa fa-trophy"></i> Progres</a>
     </div>
   </div>
     
@@ -124,12 +143,26 @@
     </div>
     <p class="macro">BMI: <span class="info-highlight">{{bmi}} - </span>Normalne vrednosti su između 20 i 25.</p>
   </div>
+ </div>
+ </div>
 
-    {% empty %}
-      <a href="{% url 'createinfo' %}">Unesite inicijani set podataka</a>
+ {% empty %}
+  <h1 id="first-header">Uputstvo</h1>
+  <img src="../../static/dijeta_je_meta/images/best-apps-for-weight-loss-alt-1440x810.jpg" alt="" class="image-position" width="1130px" >
+  <div class="centering">
+    
+    <p>Ovaj deo sajta je namenjen da bi Vam pomogao da lakše dođete do vaših ciljeva po pitanju gubitka težine. Koncipiran je tako da svaki dan u toku nedelje treba da svaki dan unesete svoju težinu i da na kraju nedelje dobijete prosek iste. Promene težine pratimo na nedeljnom nivou a ne na dnevnom, jer na dnevnom nivou ne znače nista zato što je nivo fluktuacija velik i zavisi od mnogo faktora:</p>
+    <ul class="spacing">
+        <li>- Unosa ugljenih hidrata</li>
+        <li class="button-div2">- Unosa vode</li>
+        <li>- Stresa</li>
+        <li class="button-div2">- Sna</li>
+    </ul>
+    <a href="{% url 'createinfo' %}" class="button">Unesite inicijani set podataka</a>
+  </div>
+   
   {% endfor %}
-</div>
-</div>
+
 {% endblock %}
 
 

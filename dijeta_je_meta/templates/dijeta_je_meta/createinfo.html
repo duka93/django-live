@@ -1,10 +1,42 @@
 {% extends "dijeta_je_meta/base.html" %}
 
 {% block content %}
+<h1 id="first-header">Incijalni unos podataka</h1>
 <form action="" method="post">
     {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Potvrdi">
+    <div class="center-form">
+
+      <div>
+        <label for="Ime">Ime</label>
+        <div class="error2">{{form.errors.ime}}</div>
+        <input type="text" name="ime" id="Ime" placeholder="  Ime" class="input-class">
+      </div>
+
+      <div>
+        <label>Visina</label>
+        <div class="error2">{{form.errors.visina}}</div>
+        <input type="number" name="visina"  placeholder="  Visina" class="input-class">
+      </div>
+
+      <div>
+        <label>Težina</label>
+        <div class="error2">{{form.errors.pocetna_tezina}}</div>
+        <input type="number" name="pocetna_tezina" placeholder="  Težina" class="input-class">
+      </div>
+      
+      <div id="elementi-liste-horizontalno">
+        <div id="elementi-liste-horizontalno" class="move">
+          <input type="radio" name="pol"  value="Muški" class="radio-center">
+          <label for="Muški">Muški</label>
+        </div>
+        <div id="elementi-liste-horizontalno">
+          <input type="radio" name="pol"  value="Ženski" class="radio-center">
+          <label for="Ženski">Ženski</label>
+        </div> 
+      </div>
+
+      <input type="submit" value="Potvrdi" class="button">
+   </div>
 </form>
 
 {% endblock %}

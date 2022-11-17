@@ -1,11 +1,45 @@
 {% extends "dijeta_je_meta/base.html" %}
 
 {% block content %}
+<style>
+  html{
+    background-image: url("../../static/dijeta_je_meta/images//1happy-fit-people-gym-full-shot_20.jpg");
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(34, 232, 246, 0.2);
+    background-position: 0% -25%;
+  }
+</style>
+<h1 id="first-header">Promena osnovnih podataka</h1>
 <form action="" method="post">
     {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Potvrdi">
-    <a href="{% url 'userinfo' %}"><button>Otkaži</button></a>
+    <div class="center-form">
+       <div class="change-info">
+        <div>
+          <label for="Ime">Ime</label>
+          <div class="error2">{{form.errors.ime}}</div>
+          <input type="text" required name="ime" id="gray-change" class="input-class" value="{{form.instance.ime}}">
+
+        </div>
+  
+        <div>
+          <label>Visina</label>
+          <div class="error2">{{form.errors.visina}}</div>
+          <input type="number" required name="visina" id="gray-change" class="input-class"  value="{{form.instance.visina}}">
+        </div>
+  
+        <div>
+          <label>Težina</label>
+          <div class="error2">{{form.errors.pocetna_tezina}}</div>
+          <input type="number" required name="pocetna_tezina" id="gray-change" class="input-class" value="{{form.instance.visina}}">
+        </div>
+      
+        <div id="elementi-liste-horizontalno">
+            <input type="submit" value="Promeni" class="button">
+            <a href="{% url 'userinfo' %}" class="button3">Otkaži</a>
+        </div>
+      </div>
+
+    </div>
 </form>
 
 {% endblock %}

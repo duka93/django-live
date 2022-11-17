@@ -6,7 +6,7 @@ html{
     font-family: 'Philosopher', sans-serif;
     font-family: 'Radio Canada', sans-serif;
     scroll-behavior: smooth;
-   
+    background-color: rgb(248, 240, 240);
    }
 
    
@@ -19,8 +19,7 @@ html{
     font-size: 25px;
    }
 
-
-
+   
 
    /*Header sekcija*/
    
@@ -72,6 +71,8 @@ html{
    .navbar a,a:visited{
        text-decoration: none;
    }
+
+
 
 
 
@@ -242,7 +243,9 @@ footer a{
   margin-bottom: 60px;
 }
 
+
 /* Profilna strana */
+
 
 #first-header{
     background-color: rgb(30, 152, 196);
@@ -250,6 +253,7 @@ footer a{
     font-weight: bold;
     padding:50px;
     font-size: 30px; 
+    margin-top: -10px;
 }
 
 .messages{
@@ -283,7 +287,7 @@ footer a{
     background-color: rgb(30, 152, 196);
     color: white;
     font-weight: bold;
-    padding: 25px;
+    padding: 23px;
     border-radius: 5px;
 }
 
@@ -295,15 +299,15 @@ footer a{
     border-radius: 5px;
     background-color: white;
     color: rgb(4, 100, 135);
-    margin: 20px;
+    margin-bottom: 20px;
     border-color: rgb(221, 219, 219);
     border-style: solid;
 }
 
 .info-flex{
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 #space{
@@ -354,8 +358,215 @@ footer a{
     padding-right: 25px;
 }
 
+.centering{
+    text-align: left;
+    position: relative;
+    font-family: sans-serif;
+    margin: 20px;
+}
+
+.spacing{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    list-style:none;
+}
+
+
+/* Inicijani podaci strana */
+
+
+.center-form{
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+    /* x i y osa */
+}
+
+.change-info{
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+input, label{
+    display: block;
+}
+
+
+.input-class{
+    padding-right: 284px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-bottom: 30px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+.input-class{outline: none;}
+.input-class:focus{
+    border:1px solid rgb(46, 160, 198);
+    transition-duration: 0.5s;
+    box-shadow: 1px 1px 10px rgb(46, 160, 198);
+}
+
+
+.radio-center{
+    margin-right: 5px;
+    margin-bottom: 30px;
+}
+
+.move{
+    margin-right: 30px;
+}
+
+label{
+    font-family: sans-serif;
+    margin-bottom: 7px;
+}
+
+
+.button3{
+    padding: 7px;
+    background-color:  white;
+    color:  rgb(30, 152, 196);
+    border-style: solid;
+    border-radius: 14px;
+    border-color:  rgb(30, 152, 196);
+    font-weight: 1000;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 15px;
+}
+
+
+.button3:hover{
+    background-color: rgb(235, 237, 238);
+    transition-duration: 0.5s;
+}
+
+
+.text-info2{
+    font-size: 18px;
+}
+
+#marg-top{
+    margin-top: 20px;
+}
+
+.image-position{
+    max-width: 51%;
+    height: auto;
+    float: right;
+}
+textarea{
+    font-family: sans-serif;
+    border-color: white;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.progres-border{
+    border: 3px solid;
+    border-radius: 50%;
+    font-size: 40px;
+    padding: 75px;
+    color: white;
+    background-color: rgb(4, 100, 135);
+}
+
+.progres-font{
+    font-size: 65px;
+}
+
+.start-text{
+    color: rgb(4, 100, 135);
+}
+
+.head{
+    margin-top: 40px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.circle-back{
+    background: linear-gradient(#77C3EC, #89CFF0, #9DD9F3, #B8E2F2);
+    margin-top: -10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#gray-change{
+    color: rgb(82, 80, 80);
+    font-weight: 400;
+    background-color: rgb(235, 232, 232);
+}
+
+.marg-bot{
+    margin-bottom: 20px;
+}
+
+
+/* Lista sa tezinama */
+
+ .weight-list{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+ }
+
+ .one-weight{
+    background-color: white;
+    border-radius: 5px;
+    padding: 50px;
+    margin-bottom: 20px;
+    color: rgb(4, 100, 135);
+ }
+
+ .date{
+    color: whitesmoke;
+    font-weight: bold;
+    background-color: rgb(43, 146, 198);
+    padding: 10px;
+    border-radius: 5px;
+ }
+
+ .list-variable{
+    font-size: 25px;
+    font-weight: 1000;
+    color: rgb(231, 82, 74);
+    margin-bottom: 20px;
+}
+
+.list-variable2{
+    font-size: 30px;
+    font-weight: 1000;
+    color: rgb(242, 224, 30);
+    margin-bottom: 20px;
+}
+
+.list-variable3{
+    font-size: 35px;
+    font-weight: 1000;
+    color: rgb(52, 186, 32);
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
 
 @media all and (max-width: 480px){
+
     .navbar{
         font-size: 11px;
     }
@@ -372,8 +583,17 @@ footer a{
         padding: 3px;
         font-size: 11px;
     }
-
+    .input-class{
+        padding-right: 20px;
+      }
+    textarea{
+        width: 202px;
+      }
+    .delete-button{
+        padding: 3px;
+        font-size:13px;
     }
+   }
 
 
 @media all and (min-width: 481px) and (max-width: 768px) {
@@ -383,7 +603,14 @@ footer a{
     .mediaq{
         font-size: 10px;
       }
+    .input-class{
+        padding-right: 96px;
     }
+    textarea{
+        width: 273px;
+    }
+    }
+
 
 
 
@@ -394,6 +621,12 @@ footer a{
      .mediaq{
         font-size: 30px;
       }
+    .input-class{
+        padding-right: 150px;
+    }
+    textarea{
+        width: 328px;
+    }
      }
 
  
@@ -405,4 +638,8 @@ footer a{
     .mediaq{
         font-size: 20px;
       }
+    textarea{
+        width: 464px;
+    }
+
     }

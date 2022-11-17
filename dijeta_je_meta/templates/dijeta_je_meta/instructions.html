@@ -1,15 +1,28 @@
 {% extends "dijeta_je_meta/base.html" %}
 
+{% block head%}
+
+{% endblock %}
+
 {% block content %}
-<h1>Uputstvo</h1>
-<p>Dobrodošli! Ovaj deo sajta je namenjen da bi Vam pomogao da lakše dođete do vaših ciljeva po pitanju gubitka težine.</p>
-<p>Koncipiran je tako da svaki dan u toku nedelje treba da unesete trenutnu težinu i da na kraju nedelje dobijete prosek iste. Promene težine pratimo na nedeljnom nivou a ne na dnevnom, jer na dnevnom nivou ne znače nista zato što je nivo fluktuacija velik i zavisi od mnogo faktora:</p>
-<ul>
-    <li>- Unosa ugljenih hidrata prethodnog dana</li>
-    <li>- Unosa vode</li>
-    <li>- Stresa</li>
-</ul>
-<div class="button-div">
-    <a href="{% url 'userinfo' %}" class="button" class="button-move">Nastavi</a>
-</div>
+  <h1 id="first-header">Uputstvo</h1>
+  <img src="../../static/dijeta_je_meta/images/best-apps-for-weight-loss-alt-1440x810.jpg" alt="" class="image-position">
+  <div class="centering">
+    
+    <p>Ovaj deo sajta je namenjen da bi Vam pomogao da lakše dođete do vaših ciljeva po pitanju gubitka težine. Koncipiran je tako da svaki dan u toku nedelje treba da svaki dan unesete svoju težinu i da na kraju nedelje dobijete prosek iste. Promene težine pratimo na nedeljnom nivou a ne na dnevnom, jer na dnevnom nivou ne znače nista zato što je nivo fluktuacija velik i zavisi od mnogo faktora:</p>
+    <ul class="spacing">
+        <li>- Unosa ugljenih hidrata</li>
+        <li class="button-div2">- Unosa vode</li>
+        <li>- Stresa</li>
+        <li class="button-div2">- Sna</li>
+    </ul>
+    {% if user.is_authenticated %}
+      <a href="{% url 'userinfo' %}" class="button" class="button-move">Profilna strana</a>
+    {% else %}
+      <a href="{% url 'signup' %}" class="button" class="button-move">Napravi profil</a>
+    {% endif %}
+  </div>
+
+
+
 {% endblock %}

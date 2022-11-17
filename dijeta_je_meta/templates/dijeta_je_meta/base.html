@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dijeta je meta</title>
     <link rel="stylesheet" href="{% static 'dijeta_je_meta/css/other.css' %}">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
+    <script src="https://kit.fontawesome.com/42ed48a784.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Koulen&family=Life+Savers&family=Merriweather:ital@0;1&family=Philosopher&family=Radio+Canada:wght@500&display=swap" rel="stylesheet">
@@ -29,7 +29,7 @@
           <li class="decor" ><p id="cover7" class="modifikovanje-elemenata"></p><a href="{% url 'instructions' %}" id="cover8" class="modifikovanje-elemenata1"><i class="fa fa-book"></i></a></li>
           {% if user.is_authenticated %}
           <!-- OVAJ PRVI RED ISPOD POPUNI NECIM -->
-          <li class="decor"><p id="cover1" class="modifikovanje-elemenata"> Settings &nbsp;</p><a href="{% url 'logout' %}" id="cover2" class="modifikovanje-elemenata1"><i class="fa fa-cog"></i></a></li>
+          <li class="decor"><p id="cover1" class="modifikovanje-elemenata">Lista unosa &nbsp;</p><a href="{% url 'weightlist' %}" id="cover2" class="modifikovanje-elemenata1"><i class="fa fa-list-ul"></i></a></li>
           <li class="decor" ><p id="cover3" class="modifikovanje-elemenata">Log out &nbsp;</p><a href="{% url 'logout' %}" id="cover4" class="modifikovanje-elemenata1"><i class="fa fa-user-times"></i></a></li>
           {% else %}
             <li class="decor"><p id="cover1" class="modifikovanje-elemenata">Sign up &nbsp;</p><a href="{% url 'signup' %}" id="cover2" class="modifikovanje-elemenata1"><i class="fa fa-user-plus"></i></a></li>

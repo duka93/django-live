@@ -7,7 +7,8 @@ class CreateInfoForm(forms.ModelForm):
         fields = ['ime','visina','pocetna_tezina', 'pol']
         widgets = {
                'pol': forms.RadioSelect()
-           }   
+           }
+  
 
 class AddCurrentWeight(forms.ModelForm):
     class Meta:
@@ -20,7 +21,9 @@ class UpdateStartWeightAndHeight(forms.ModelForm):
     class Meta:
       model = StartUserWeightAndHeight
       fields = ['ime', 'pocetna_tezina', 'visina']
-    
+
+
+  
 
 
 

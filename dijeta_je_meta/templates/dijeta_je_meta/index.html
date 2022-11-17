@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dijeta je meta</title>
     <link rel="stylesheet" href="{% static 'dijeta_je_meta/css/index.css' %}">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
+    <script src="https://kit.fontawesome.com/42ed48a784.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="shortcut icon" type="image/png" href="{% static 'dijeta_je_meta/images/favicon.png' %}"/>
@@ -24,13 +24,15 @@
       <a class="vrh" href=""><i class="fa fa-home" id="cover10" class="modifikovanje-elemenata1"></i><p id="cover0" class="modifikovanje-elemenata"></p></a>
       <nav>
         <ul id="elementi-liste-horizontalno" class="enlarge" style="list-style: none;"> <!--u ovom "style delu izbacujemo bullet point"-->
-          <li class="decor"><p id="cover1" class="modifikovanje-elemenata"></p><a href="{% url 'signup' %}" id="cover2" class="modifikovanje-elemenata1"><i class="fa fa-user-plus"></i></a></li>
+          
           <li class="decor" ><p id="cover5"  class="modifikovanje-elemenata"></p><a href="{% url 'userinfo' %}" id="cover6" class="modifikovanje-elemenata1"><i class="fa fa-user-circle"></i></a></li>
           <li class="decor" ><p id="cover7" class="modifikovanje-elemenata"></p><a href="{% url 'instructions' %}" id="cover8" class="modifikovanje-elemenata1"><i class="fa fa-book"></i></a></li>
           {% if user.is_authenticated %}
-            <li class="decor" ><p id="cover3" class="modifikovanje-elemenata">Log out &nbsp;</p><a href="{% url 'logout' %}" id="cover4" class="modifikovanje-elemenata1"><i class="fa fa-user-times"></i></a></li>
+            <li class="decor"><p id="cover1" class="modifikovanje-elemenata">Lista unosa &nbsp;</p><a href="{% url 'weightlist' %}" id="cover2" class="modifikovanje-elemenata1"><i class="fa fa-list-ul"></i></a></li>
+            <li class="decor" ><p id="cover3" class="modifikovanje-elemenata">Odjavi se &nbsp;</p><a href="{% url 'logout' %}" id="cover4" class="modifikovanje-elemenata1"><i class="fa fa-user-times"></i></a></li>
           {% else %}
-            <li class="decor" ><p id="cover3" class="modifikovanje-elemenata"> Log in&nbsp;</p><a href="{% url 'login' %}" id="cover4" class="modifikovanje-elemenata1"><i class="fa fa-users"></i></a></li>
+            <li class="decor"><p id="cover1" class="modifikovanje-elemenata">Registruj se &nbsp;</p><a href="{% url 'signup' %}" id="cover2" class="modifikovanje-elemenata1"><i class="fa fa-user-plus"></i></a></li>
+            <li class="decor" ><p id="cover3" class="modifikovanje-elemenata"> Prijavi se&nbsp;</p><a href="{% url 'login' %}" id="cover4" class="modifikovanje-elemenata1"><i class="fa fa-users"></i></a></li>
           {% endif %}
         </ul>
       </nav>

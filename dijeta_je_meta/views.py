@@ -71,8 +71,8 @@ class WeightAndMacros:
                 end_date += datetime.timedelta(days = 7)
                 self.trenutna += avg_per_week
 
-            razlika = f"Ukupno treba da se ugojite još: {round(razlika_kg,1)} kg"
-            avg_gain_loss = f"U toku narednih 7 unosa treba da se ugojite: {round(avg_per_week,1)} kg"
+            razlika = f"Ukupno treba da se ugojite:   {round(razlika_kg,1)} kg"
+            avg_gain_loss = f"U narednih 7 dana treba da se ugojite:     {round(avg_per_week,1)} kg"
             end_day = f"Idealan datum završetka dijete: {datetime.datetime.strftime(end_date, '%d-%m-%Y')}"
 
         context['razlika'] = razlika
@@ -146,6 +146,13 @@ def userinfo(request):
         macro_instance = WeightAndMacros(idealna_tezina,week)
         macro_instance.calculate_macros(context)
         macro_instance.weight_diff(context)
+
+        if idealna_tezina > week:
+            progres = round((week/idealna_tezina)*100)
+        else:
+            progres = round((idealna_tezina/week)*100)
+
+        context['progres'] = progres
         context['bmi'] = bmi
         context['week_avg'] = week
 
@@ -189,7 +196,7 @@ class CreateInfo(LoginRequiredMixin,CreateView):
     model = StartUserWeightAndHeight
     form_class = CreateInfoForm
     template_name = "dijeta_je_meta/createinfo.html"
-    success_url = reverse_lazy("instructions")
+    success_url = reverse_lazy("userinfo")
     def form_valid(self, form): # Sa ovim oznacavmo da se instanca nove pice se pridodaje trenutnom useru
        form.instance.owner = self.request.user
        messages.success(self.request, 'Čestitamo, uspešno ste kreirali nalog!')
@@ -211,12 +218,19 @@ class ListCurrentWeight(LoginRequiredMixin,ListView):
     model = CurrentWeight
     template_name = "dijeta_je_meta/weight_list.html"
     paginate_by = 7
-    def get_context_data(self,*args, **kwargs):
-        context = super(ListCurrentWeight, self).get_context_data(*args,**kwargs)
-        return context
 
     def get_queryset(self): #sa ovim querijem cemo vratiti samo objekte koji pripadaju trenutnom useru
         return CurrentWeight.objects.filter(owner=self.request.user)
+        
+    def get_context_data(self, **kwargs):
+        context = super(ListCurrentWeight, self).get_context_data(**kwargs)
+        idealna = round(ideal_weight(self.request))
+        list  = []
+        list.append(idealna)
+        context['idealna'] = list
+        return context
+
+
 
 
 class UpdateStartWeightAndHeight(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
@@ -230,6 +244,12 @@ class UpdateStartWeightAndHeight(LoginRequiredMixin, UserPassesTestMixin, Update
             return False
         else:
             return True
+    
+    #Ovo smo dodali zbog poruke o uspesnosti
+    def form_valid(self, form): # Sa ovim oznacavmo da se instanca nove pice se pridodaje trenutnom useru
+       form.instance.owner = self.request.user
+       messages.success(self.request,'Uspešno ste promenili osnovne informacije!')
+       return super().form_valid(form)
 
 
 class UpdateCurrentWeight(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
@@ -239,10 +259,17 @@ class UpdateCurrentWeight(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     
     def test_func(self):
         cw = self.get_object()
+
         if self.request.user != cw.owner:
             return False
         else:
             return True
+
+    #Ovo smo dodali zbog poruke o uspesnosti
+    def form_valid(self, form): # Sa ovim oznacavmo da se instanca nove pice se pridodaje trenutnom useru
+       form.instance.owner = self.request.user
+       messages.success(self.request,'Uspešno ste promenili težinu!')
+       return super().form_valid(form)
 
 class DeleteCurrentWeight(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = CurrentWeight
@@ -251,10 +278,10 @@ class DeleteCurrentWeight(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
      
     def test_func(self):
         cw = self.get_object()
-
         if self.request.user == cw.owner:
             return True
         return False
+    
 
 
 

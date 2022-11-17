@@ -2,7 +2,7 @@ from email.policy import default
 from random import choices
 from tkinter.tix import Tree
 from django.db import models
-from django.core.validators import MaxValueValidator, MinValueValidator
+from django.core.validators import MaxValueValidator, MinValueValidator, MinLengthValidator
 from django.contrib.auth.models import User
 from django import forms
 import datetime
@@ -11,7 +11,9 @@ import datetime
 
 class StartUserWeightAndHeight(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    ime = models.CharField(max_length=25, default="")
+    ime = models.CharField(max_length=25, default="",
+    validators=[MinLengthValidator(3)]
+    )
     pocetna_tezina = models.IntegerField(
         default=0,
         validators=[
@@ -60,9 +62,6 @@ class CurrentWeight(models.Model):
         return f"Datum: {datetime.datetime.strftime(self.date_added, '%d-%b-%Y')} Tezina: {self.trenutna_tezina}kg"
     def get_absolute_url(self):
         return "/overview/weightlist"
-
-
-
 
 
 

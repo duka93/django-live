@@ -4,7 +4,6 @@
 let cover1 = document.getElementById('cover1');
 
 const eventHandle2 = function(){
-    cover1.innerHTML = 'Sign up &nbsp;';
     cover1.style.display = 'inline-block';
     cover1.style.fontSize = '17px';
     cover1.style.transitionDuration = '0.5s'
@@ -47,7 +46,7 @@ cover10.addEventListener('mouseout',eventHandle7)
 let cover5 = document.getElementById('cover5');
 
 const eventHandle8 = function(){
-    cover5.innerHTML = 'Profile &nbsp;';
+    cover5.innerHTML = 'Profil &nbsp;';
     cover5.style.fontSize = '17px';
     cover5.style.display = 'inline-block';
     cover5.style.transitionDuration = '0.5s'
