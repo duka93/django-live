@@ -1,30 +1,42 @@
 {% extends "dijeta_je_meta/base.html" %}
 
 {% block content %}
-<table>
-  <tr>
-    <td>Prosečna težina od prethodnih 7 unosa:</td>
-    <td>&nbsp;&nbsp;&nbsp; Datum početka unosa</td>
-    <td>&nbsp;&nbsp;&nbsp; Datum zavrsetka unosa</td>
-    <td>&nbsp;&nbsp;&nbsp; Odstupanje od idealne težine</td>
-  <tr>
-   <tr></tr>
 
-  {% if lists %}
-      {% for first, second, third, fourth in lists %}
-          <tr>
-          <td>{{first}} kg</td>
-          <td>&nbsp;&nbsp;&nbsp;{{second}}</td>
-          <td>&nbsp;&nbsp;&nbsp; {{third}}</td>
-          <td>&nbsp;&nbsp;&nbsp; {{fourth}}  kg</td>
-          </tr>
-      {% endfor %}
-  {% else %}
-  <td>Nema dovoljno unosa</td>
-  <td>&nbsp;&nbsp;&nbsp; Nema dovoljno unosa</td>
-  <td>&nbsp;&nbsp;&nbsp; Nema dovoljno unosa</td>
-  <td>&nbsp;&nbsp;&nbsp; Nema dovoljno unosa</td>
+<h1 id="first-header">Progres</h1>
 
-  {% endif %}
-</table>
+<div class="info-flex">
+  <div>
+    <table cellspacing="0">
+      <thead>
+      <tr class="main-row">
+        <td class="header-label">Prosečna težina od prethodnih 7 unosa</td>
+        <td class="header-label"> Datum početka unosa</td>
+        <td class="header-label"> Datum završetka unosa</td>
+        <td class="header-label"> Odstupanje od idealne težine</td>
+      <tr>
+      </thead>
+      <tr></tr>
+      <tr></tr>
+      <tr></tr>
+      <tr></tr>
+
+      {% if lists %}
+          {% for first, second, third, fourth in lists %}
+              <tr>
+              <td>{{first}} kg</td>
+              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{second}}</td>
+              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{third}}</td>
+              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{fourth}}  kg</td>
+              </tr>
+          {% endfor %}
+      {% else %}
+      <td>Nema dovoljno unosa</td>
+      <td>&nbsp;&nbsp;&nbsp; Nema dovoljno unosa</td>
+      <td>&nbsp;&nbsp;&nbsp; Nema dovoljno unosa</td>
+      <td>&nbsp;&nbsp;&nbsp; Nema dovoljno unosa</td>
+
+      {% endif %}
+    </table>
+  </div>
+</div>
 {% endblock %}

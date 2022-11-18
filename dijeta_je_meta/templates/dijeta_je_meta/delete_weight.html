@@ -1,11 +1,31 @@
 {% extends "dijeta_je_meta/base.html" %}
 
 {% block content %}
+
+<h1 id="first-header">Brisanje unosa</h1>
+<style>
+    html{
+      background-image: url('/static/dijeta_je_meta/images/galaxy-nature-aesthetic-background-starry-sky-mountain-remixed-media_39.jpg');
+      box-shadow: inset 0 0 0 1000px rgba(34, 232, 246, 0.2);
+      background-size: cover;
+    }
+</style>
+
 <form  method="post">
+
     {% csrf_token %}
-    <p>Da li ste sigurni da zelite da obrisete unos - {{object}} ?</p>
-    <input type="submit" value="Želim">
-    <a href="{% url 'weightlist' %}"><button>Ne želim</button></a>
+    <div class="center-form">
+    <div>
+        <p class="delete">Da li ste sigurni da želite da obrišete unos - {{object}} ?</p>
+    </div>
+    <div id="elementi-liste-horizontalno">
+        <input type="submit" value="Želim" class="button">
+        <a href="{% url 'weightlist' %}" class="button3">Ne želim</a>
+    </div>
+   </div>
 </form>
+
+
+
 
 {% endblock %}

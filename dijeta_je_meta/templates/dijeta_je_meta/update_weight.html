@@ -1,9 +1,43 @@
 {% extends "dijeta_je_meta/base.html" %}
 
 {% block content %}
+
+
+<style>
+    html{
+      background-image: url('/static/dijeta_je_meta/images/wepik-photo-mode-20221018-0478.png');
+      background-position: 0% -100%;
+      box-shadow: inset 0 0 0 1000px rgba(34, 232, 246, 0.2);
+      background-size: cover;
+    }
+</style>
+
+
+<h1 id="first-header">Promena unosa</h1>
 <form action="" method="post">
     {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Potvrdi">
+    <div class="center-form">
+        <div class="change-info">
+        
+        <div>
+          <p>Trenutna težina</p>
+          <div class="error2">{{form.errors.trenutna_tezina}}</div>
+          <input type="number" required name="trenutna_tezina"  class="input-class" id="gray-change" placeholder="Trenutna težina" value="{{form.instance.trenutna_tezina}}">
+        </div>
+  
+        <div class="marg-bot">
+          <p>Detalji o ishrani</p>
+          <textarea name="detalji" rows="4" cols="62.5" id="gray-change"></textarea>
+        </div>
+        
+
+        <div id="elementi-liste-horizontalno">
+          <input type="submit" value="Potvrdi" class="button">
+          <a href="{% url 'weightlist' %}" class="button3">Otkaži</a>
+        </div>
+        
+        </div>
+    </div>
 </form>
+
 {% endblock %}

@@ -258,7 +258,8 @@ footer a{
 
 .messages{
     width: 100%;
-    padding: 25px;
+    padding: 20px;
+    margin-top: -10px;
     border-style: solid;
     border-color: rgb(181, 249, 181);
     background-color: rgb(188, 248, 188);
@@ -389,8 +390,8 @@ footer a{
     border-radius: 5px;
 }
 
-input, label{
-    display: block;
+input{
+    display: inline-flex;
 }
 
 
@@ -455,8 +456,7 @@ label{
 }
 
 .image-position{
-    max-width: 51%;
-    height: auto;
+    max-width: 54% !important;
     float: right;
 }
 textarea{
@@ -555,11 +555,41 @@ textarea{
     margin-bottom: 20px;
 }
 
+.delete{
+    margin-top: -100px;
+    color: white;
+    margin-bottom: 50px;
+}
 
 
 
+.main-row{
+    font-size: 25px;
+    border: 1px solid;
+    border-color: #186baf;
+    border-spacing: 2px;
+}
+
+.header-label{
+    border: 1px solid;
+    padding: 10px;
+    color: #186baf;
+    font-weight: bold;
+}
+table td{
+    border: 1px solid #186baf;
+    text-align: center;
+    padding: 5px;
+    color: #186baf;
+}
+table{
+    background-color: white;
+}
 
 
+.test{
+    display: flex;
+}
 
 
 
@@ -593,6 +623,12 @@ textarea{
         padding: 3px;
         font-size:13px;
     }
+    .header-label{
+        font-size: 10px;
+    }
+    table td{
+        font-size: 8px;
+    }
    }
 
 
@@ -608,6 +644,12 @@ textarea{
     }
     textarea{
         width: 273px;
+    }
+    .header-label{
+        font-size: 15px;
+    }
+    table td{
+        font-size: 12px;
     }
     }
 
