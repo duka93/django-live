@@ -345,22 +345,27 @@ html{
        margin: 10px;
    }
    
-   .blog figcaption{
-       padding: -10px;
-       text-align: left;
-       font-weight: bold;
-       font-size: 15px;
-       margin-top: 7px;
-   }
-   
-   .blog button{
-       margin-top: 7px;
-   }
-   
    .img-jedan{
     padding-left: 100px;
    }
    
+.button{
+    padding: 7px 15px 7px 15px;
+    background-color: rgb(30, 152, 196);
+    color: white;
+    border-style: solid;
+    border-radius: 14px;
+    border-color:  rgb(30, 152, 196);
+    font-weight: bolder;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.button:hover{
+    color: rgb(30, 152, 196);
+    background-color: white;
+    transition-duration: 0.5s;
+}
    
 @media all and (max-width: 480px){
    

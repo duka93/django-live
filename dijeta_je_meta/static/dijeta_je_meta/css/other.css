@@ -276,6 +276,7 @@ footer a{
     display: flex;
     justify-content: center;
     margin-bottom: 50px;
+    
 }
 
 
@@ -456,7 +457,7 @@ label{
 }
 
 .image-position{
-    max-width: 54% !important;
+    max-width: 56% !important;
     float: right;
 }
 textarea{
@@ -482,7 +483,7 @@ textarea{
 }
 
 .start-text{
-    color: rgb(4, 100, 135);
+    color: white;
 }
 
 .head{
@@ -492,7 +493,7 @@ textarea{
 }
 
 .circle-back{
-    background: linear-gradient(#77C3EC, #89CFF0, #9DD9F3, #B8E2F2);
+    background: linear-gradient(rgb(30, 152, 196), rgb(63, 192, 239), #B8E2F2);
     margin-top: -10px;
     padding-top: 20px;
     padding-bottom: 20px;

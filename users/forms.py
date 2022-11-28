@@ -14,8 +14,6 @@ class SignUpForm(UserCreationForm):
         password1 = self.cleaned_data.get("password1")
         password2 = self.cleaned_data.get("password2")
 
-        if not password2:
-            raise forms.ValidationError("You must confirm your password")
         if len(password1)<8:
             raise forms.ValidationError("Šifra treba da ima najmanje 8 karaktera")
         if password1.isnumeric():
@@ -25,6 +23,12 @@ class SignUpForm(UserCreationForm):
         if password1 != password2:
             raise forms.ValidationError("Vaše šifre se ne poklapaju")
         return password2
+
+    def clean_username(self):
+        username = self.cleaned_data.get("username")
+        if ' ' in username:
+            raise forms.ValidationError("Unesite ispravno korisničko ime. Može da sadrži samo reči, brojeve i znakove @/./+/-/_ .")
+        return username
 
 
 
