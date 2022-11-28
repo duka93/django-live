@@ -1,7 +1,10 @@
 html{
-    font-family: "Life savers";
-    scroll-behavior: smooth;
-   
+    font-family: 'Abril Fatface', cursive;
+    font-family: 'Koulen', cursive;
+    font-family: 'Life Savers', cursive;
+    font-family: 'Merriweather', serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
    }
    
    p{
@@ -91,7 +94,7 @@ html{
    
    .koncept h1,p,h2{
        opacity: 1.0 !important;
-       font-weight: bold;
+       font-weight: 1000;
    }
    
    
@@ -99,7 +102,6 @@ html{
    
    #zablude{
        margin-bottom: 40px;
-       font-weight: bold;
    }
    .slike-za-fleks{
        display:flex;
@@ -115,6 +117,7 @@ html{
        text-align: center;
        border-radius: 20px;
        font-size: 15.5px;
+       font-weight: bold;
    }
    .block figcaption{
        margin-top: 10px;

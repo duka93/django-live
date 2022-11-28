@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class SignUpForm(UserCreationForm):
     error_css_class = 'error2'
-    email = forms.EmailField(widget=forms.EmailInput(attrs={'class':'form-control'}))
+    email = forms.EmailField(widget=forms.EmailInput)
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']
@@ -25,13 +25,6 @@ class SignUpForm(UserCreationForm):
         if password1 != password2:
             raise forms.ValidationError("Vaše šifre se ne poklapaju")
         return password2
-
-    def __init__(self, *args, **kwargs):
-        super(SignUpForm,self).__init__(*args, **kwargs)
-
-        self.fields['username'].widget.attrs['class'] = 'form-control'
-        self.fields['password1'].widget.attrs['class'] = 'form-control'
-        self.fields['password2'].widget.attrs['class'] = 'form-control'
 
 
 
