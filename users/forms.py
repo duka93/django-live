@@ -17,9 +17,9 @@ class SignUpForm(UserCreationForm):
         if len(password1)<8:
             raise forms.ValidationError("Šifra treba da ima najmanje 8 karaktera")
         if password1.isnumeric():
-            raise forms.ValidationError("Vaša šifra se nalazi medju najčešće korišćenim siframa")
+            raise forms.ValidationError("Vaša šifra se nalazi medju najčešće korišćenim siframa. Treba da sadrži kombinaciju brojeva i slova")
         if password1.isalpha():
-            raise forms.ValidationError("Vaša šifra se nalazi medju najčešće korišćenim siframa")
+            raise forms.ValidationError("Vaša šifra se nalazi medju najčešće korišćenim siframa. Treba da sadrži kombinaciju brojeva i slova")
         if password1 != password2:
             raise forms.ValidationError("Vaše šifre se ne poklapaju")
         return password2
